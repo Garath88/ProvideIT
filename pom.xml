@@ -58,6 +58,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+
         <!-- Just wanted to test this (remove and use standard rest client) -->
         <dependency>
             <groupId>com.maciejwalkowiak.spring</groupId>

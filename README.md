@@ -1,5 +1,5 @@
 # Dependencies required:
-docker + docker-compose
+docker + docker-compose,
 (maven), (mysql db)
 
 # How to run:
@@ -23,4 +23,4 @@ maxPrice
 eg: http://localhost:8080/product/list?minPrice=22&maxPrice=30
 
 category
-eg: http://localhost:8080/product/list?category=men's clothing
+eg: http://localhost:8080/product/list?category=men's%clothing
