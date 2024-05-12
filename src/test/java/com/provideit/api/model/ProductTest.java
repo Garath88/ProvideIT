@@ -45,6 +45,7 @@ public class ProductTest {
         Product expected = new Product(7L, "title2", 7.0, "category4", "someDesc", "imagelink");
         Assert.assertEquals(actual, expected);
         Assert.assertEquals(actual.title(), expected.title());
+        Assert.assertEquals(actual.price(), expected.price());
         Assert.assertEquals(actual.category(), expected.category());
         Assert.assertEquals(actual.description(), expected.description());
         Assert.assertEquals(actual.image(), expected.image());

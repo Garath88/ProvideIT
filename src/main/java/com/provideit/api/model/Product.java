@@ -2,6 +2,9 @@ package com.provideit.api.model;
 
 import static com.provideit.api.service.ProductService.REMOVE_DESCRIPTION_FILTER;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -63,5 +66,47 @@ public final class Product {
 
     public String image() {
         return image;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder()
+            .append(id)
+            .append(title)
+            .append(price)
+            .append(category)
+            .append(description)
+            .append(image)
+            .toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Product other) {
+            return new EqualsBuilder()
+                .append(id, other.id)
+                .append(title, other.title)
+                .append(price, other.price)
+                .append(category, other.category)
+                .append(description, other.description)
+                .append(image, other.image)
+                .isEquals();
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "{\"title\":\""
+            + title
+            + "\",\"price\":"
+            + price
+            + ",\"category\":\""
+            + category
+            + "\",\"description\":\""
+            + description
+            + "\",\"image\":\""
+            + image
+            + "\"}";
     }
 }
